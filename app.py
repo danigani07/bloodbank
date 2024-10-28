@@ -11,7 +11,7 @@ def get_db_connection():
         host='bloodbank-db.clacek8ey7ty.us-east-1.rds.amazonaws.com',  # e.g., 'your-db-instance.abc123xyz.us-east-1.rds.amazonaws.com'
         user='admin',
         password='bloodbank12345',
-        database='bloodbankdb'
+        database='bloodbridge'
     )
 
 # Home route
