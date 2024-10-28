@@ -8,10 +8,10 @@ app.secret_key = 'your_secret_key'
 # Database connection
 def get_db_connection():
     return mysql.connector.connect(
-        host='your_rds_host',  # e.g., 'your-db-instance.abc123xyz.us-east-1.rds.amazonaws.com'
-        user='your_username',
-        password='your_password',
-        database='lifelink'
+        host='bloodbank-db.clacek8ey7ty.us-east-1.rds.amazonaws.com',  # e.g., 'your-db-instance.abc123xyz.us-east-1.rds.amazonaws.com'
+        user='admin',
+        password='bloodbank12345',
+        database='bloodbankdb'
     )
 
 # Home route
