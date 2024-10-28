@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Donor Dashboard - BloodBridge</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+        <a class="navbar-brand" href="{{ url_for('index') }}">BloodBridge</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <h2>Welcome, [Donor's Name]</h2>
+        <h4>Upcoming Donations</h4>
+        <ul class="list-group">
+            <!-- List of scheduled donations -->
+            <li class="list-group-item">Blood Donation at XYZ Camp on [Date] at [Location]</li>
+        </ul>
+        <h4>Schedule a Donation</h4>
+        <form action="{{ url_for('schedule_donation') }}" method="POST">
+            <div class="form-group">
+                <label for="bloodType">Blood Type</label>
+                <select class="form-control" id="bloodType" name="bloodType" required>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="donationDate">Date</label>
+                <input type="date" class="form-control" id="donationDate" name="donationDate" required>
+            </div>
+            <div class="form-group">
+                <label for="donationLocation">Location</label>
+                <input type="text" class="form-control" id="donationLocation" name="donationLocation" required>
+            </div>
+            <button type="submit" class="btn btn-danger">Schedule Donation</button>
+        </form>
+    </div>
+
+    <footer class="text-center py-4">
+        <p class="m-0">&copy; 2024 BloodBridge. All rights reserved.</p>
+    </footer>
+</body>
+</html>
