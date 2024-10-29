@@ -19,10 +19,10 @@ def get_db_connection():
     conn = None
     try:
         conn = mysql.connector.connect(
-            host=os.getenv('DB_HOST'),
-            user=os.getenv('DB_USER'),
-            password=os.getenv('DB_PASSWORD'),
-            database=os.getenv('DB_NAME')
+            host=os.getenv('bloodbank-db.clacek8ey7ty.us-east-1.rds.amazonaws.com'),
+            user=os.getenv('admin'),
+            password=os.getenv('bloodbank12345'),
+            database=os.getenv('bloodbridge')
         )
         yield conn
     except mysql.connector.Error as e:
